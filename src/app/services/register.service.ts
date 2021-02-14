@@ -1,31 +1,47 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-import { User } from '../models/User';
-// import { HttpClient } from "@angular/common/http";
+import { Observable, Subject } from 'rxjs';
+import { User, FormUser } from '../models/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
-  private user: any;
+  private user!: User;
 
-  //If I will be use methode register then I need HttpClient service, u don't ask me to do that then I only leave it hear 
-  // constructor(private http: HttpClient) { }
-  constructor() { }
 
-  private subjectOfRegistratedUser = new Subject<User>();
-  public obsForNewUser = this.subjectOfRegistratedUser.asObservable();
-
-  setValue(userData: User) {
-    this.subjectOfRegistratedUser.next(userData) // Sets the new Observable value that can be listened in components 
-    console.log("This what get the service:");
-    console.log(userData);
-    this.user = userData;
+  constructor() {
   }
 
-  register(user: any) {
-    //Example of Http request
+  createUser(userData: FormUser) {
+    const user = this.mapUser(userData);
+    console.log("This what get in the service:");
+    console.log(user);
+    this.user = user; // remember user for the session
+
+    // Example of Http request
     // return this.http.put(`/v1/accounts/register`, user);
+  }
+
+
+  mapUser(user: FormUser): User {
+    // The specifications were not clear about the mapped data format.
+    // I decided to use nested object, instead of flat object with joined strings.
+    return {
+      Name: {
+        FirstName: user.firstName,
+        LastName: user.lastName,
+      },
+      Email: user.email,
+      Address: {
+        Street: user.street,
+        Town: user.town,
+        Country: user.country,
+      },
+      AdditionalInformation: {
+        Gender: user.gender,
+        AdditionalData: user.textArea,
+      }
+    }
   }
 
 }

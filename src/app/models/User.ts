@@ -1,4 +1,4 @@
-export interface User {
+export interface FormUser {
     value: any;
     firstName: string;
     lastName: string;
@@ -8,4 +8,21 @@ export interface User {
     town: string;
     country: string;
     textArea: string;
+}
+
+export interface User {
+    Name: {
+        FirstName: string;
+        LastName: string;
+    };
+    Email: string;
+    Address: {
+        Street: string;
+        Town: string;
+        Country: string;
+    };
+    AdditionalInformation: {
+        Gender: string;
+        AdditionalData: string;
+    };
 }
