@@ -2,15 +2,24 @@
   <mat-drawer #drawer mode="push" class="drawer">
     <h3 class="title">Menu</h3>
     <mat-label>
+      <button mat-button class="label-button home" color="primary" routerLink="home">Home</button>
+      <br>
       <button mat-button class="label-button register" color="primary" routerLink="register">Register</button>
     </mat-label>
 
   </mat-drawer>
 
   <mat-drawer-content>
-    <button mat-raised-button (click)="drawer.toggle()">Menu</button>
 
-    <router-outlet></router-outlet>
+    <mat-toolbar color="primary" style=" left: 0 ; right: 0;top: 0; width: 100%;  position: fixed;">
+      <button mat-raised-button (click)="drawer.toggle()">Menu</button>
+    </mat-toolbar>
+    <div class="container" style="margin-top: 70px;">
+      <router-outlet></router-outlet>
+    </div>
+
+
+
 
   </mat-drawer-content>
 </mat-drawer-container>

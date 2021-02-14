@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
 const MaterialComponents = [
     MatButtonModule,
     MatToolbarModule,
@@ -23,7 +24,8 @@ const MaterialComponents = [
     MatCardModule,
     MatListModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    MatGridListModule
 ];
 
 @NgModule({
