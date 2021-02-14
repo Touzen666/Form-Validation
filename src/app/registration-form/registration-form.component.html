@@ -1,47 +1,107 @@
-<form class="registerContainer">
+<form class="registerContainer" [formGroup]="registerForm" (ngSubmit)="submited()">
 
 
-    <!-- {{ productForm.value | json }} -->
+    {{ registerForm.value | json }}
 
-    <mat-card>
+    <mat-card class="registerFormCard">
         <section class="registerFields">
             <mat-form-field class="example-full-width">
                 <mat-label>First Name</mat-label>
-                <input matInput ngModel name="energy" placeholder="Ex. Pizza" />
+                <input matInput formControlName="firstName" placeholder="Bartosz" />
+                <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors.required">First name is required</div>
+                    <div *ngIf="firstName.errors.pattern">Allowed only letters</div>
+                    <div *ngIf="firstName.errors.minLength">Required more then 3 letters</div>
+                </mat-error>
+                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
+                </mat-succes> -->
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Last Name</mat-label>
-                <input matInput ngModel name="carbohydrates" placeholder="Ex. Pizza" />
+                <input matInput formControlName="lastName" placeholder="Ochędowski" />
+                <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors.required">Last name is required</div>
+                    <div *ngIf="firstName.errors.pattern">Allowed only letters</div>
+                    <div *ngIf="firstName.errors.minLength">Required more then 3 letters</div>
+                </mat-error>
+                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
+                </mat-succes>
+                -->
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input matInput ngModel name="proteines" placeholder="Ex. Pizza" />
+                <input matInput formControlName="email" placeholder="ochedowski.bartosz@gmail.com" />
+                <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors.required">Email name is required</div>
+                    <div *ngIf="firstName.errors.email">Maby you forgot the "@"</div>
+                </mat-error> 
+                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
+                </mat-succes>
+                -->
             </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>Gender</mat-label>
-                <input matInput ngModel name="fat" placeholder="Ex. Pizza" />
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Enter your gender</mat-label>
+                <mat-select formControlName="gender">
+                    <mat-option>--</mat-option>
+                    <mat-option value="male">
+                        male
+                    </mat-option>
+                    <mat-option value="female">
+                        female
+                    </mat-option>
+                </mat-select>
+                <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors.required">Gender name is required</div>
+                </mat-error>
+                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
+                </mat-succes>
+                -->
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Street</mat-label>
-                <input matInput ngModel name="fat" placeholder="Ex. Pizza" />
+                <input matInput formControlName="street" placeholder="Ex. Pizza" />
+                <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors.required">Gender name is required</div>
+                </mat-error> 
+                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
+                </mat-succes>
+                -->
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Town</mat-label>
-                <input matInput ngModel name="fat" placeholder="Ex. Pizza" />
+                <input matInput formControlName="town" placeholder="Ex. Pizza" />
+                <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors.required">Gender name is required</div>
+                </mat-error>
+                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
+                </mat-succes>
+                -->
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Country</mat-label>
-                <input matInput ngModel name="fat" placeholder="Ex. Pizza" />
+                <input matInput formControlName="country" placeholder="Ex. Pizza" />
+                <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors.required">Gender name is required</div>
+                </mat-error> 
+                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
+                </mat-succes>
+                -->
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Additional data</mat-label>
-                <input matInput ngModel name="fat" placeholder="Ex. Pizza" />
+                <input matInput formControlName="textArea" placeholder="Ex. Pizza" />
+                <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                    <div *ngIf="firstName.errors.required">Gender name is required</div>
+                </mat-error> 
+                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
+                </mat-succes>
+                -->
             </mat-form-field>
         </section>
-        <div style="justify-content: center">
-            <!-- <button mat-button [mat-dialog-close]="produkt">
-                    Dodaj
-                </button> -->
+        <div>
+            <button mat-raised-button color="primary" [disabled]="!registerForm.valid" type="submit">
+                Dodaj
+            </button>
         </div>
     </mat-card>
 

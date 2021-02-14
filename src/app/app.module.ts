@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import { MaterialModule } from './material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MaterialModule, FormsModule, ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
