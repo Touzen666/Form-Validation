@@ -10,8 +10,8 @@
             <input matInput type="text" formControlName="firstName" placeholder="Enter Your name" />
             <mat-error *ngIf="firstName && firstName.invalid && (firstName.dirty || firstName.touched)">
                 <div *ngIf="firstName.errors && firstName.errors.required">First name is required</div>
-                <div *ngIf="firstName.errors && firstName.errors.pattern">Allowed only letters</div>
-                <div *ngIf="firstName.errors && firstName.errors.minLength">Required more then 3 letters</div>
+                <div *ngIf="firstName.errors && firstName.errors.pattern">Only letters alowed</div>
+                <div *ngIf="firstName.errors && firstName.errors.minlength">Required more than 3 letters</div>
             </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
@@ -19,8 +19,8 @@
             <input matInput type="text" formControlName="lastName" placeholder="Enter your last name" />
             <mat-error *ngIf="lastName && lastName.invalid && (lastName.dirty || lastName.touched)">
                 <div *ngIf="lastName.errors && lastName.errors.required">Last name is required</div>
-                <div *ngIf="lastName.errors && lastName.errors.pattern">Allowed only letters</div>
-                <div *ngIf="lastName.errors && lastName.errors.minLength">Required more then 3 letters</div>
+                <div *ngIf="lastName.errors && lastName.errors.pattern">Only letters alowed</div>
+                <div *ngIf="lastName.errors && lastName.errors.minlength">Required more than 3 letters</div>
             </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width emailField" [class.green-input]="hasError"
@@ -29,8 +29,7 @@
             <input matInput type="text" formControlName="email" placeholder="Example kowalski@gmail.com" />
             <mat-error *ngIf="email && email.invalid && (email.dirty || email.touched)">
                 <div *ngIf="email.errors && email.errors.required">Email is required</div>
-                <div *ngIf="email.errors && email.errors.email">Email should start with a letter in the middle with "@"
-                    and "." and end with a letter</div>
+                <div *ngIf="email.errors && email.errors.email">Pleas enter valid email address</div>
             </mat-error>
         </mat-form-field>
         <mat-form-field class="gender" appearance="fill" class="example-full-width" [class.green-input]="hasError"
