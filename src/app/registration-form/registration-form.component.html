@@ -28,7 +28,7 @@
             <mat-label>{{fieldsNames[2]}}</mat-label>
             <input matInput type="text" formControlName="email" placeholder="Example kowalski@gmail.com" />
             <mat-error *ngIf="email && email.invalid && (email.dirty || email.touched)">
-                <div *ngIf="email.errors && email.errors.required">Email name is required</div>
+                <div *ngIf="email.errors && email.errors.required">Email is required</div>
                 <div *ngIf="email.errors && email.errors.email">Email should start with a letter in the middle with "@"
                     and "." and end with a letter</div>
             </mat-error>
