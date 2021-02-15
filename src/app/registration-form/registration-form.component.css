@@ -26,7 +26,7 @@
   width: 80%;
 }
 .emailField{
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 @media (min-width: 400px) {
     .registerFormCard{

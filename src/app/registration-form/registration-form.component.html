@@ -26,10 +26,11 @@
         <mat-form-field class="example-full-width emailField" [class.green-input]="hasError"
             [class.gray-input]="hasError">
             <mat-label>{{fieldsNames[2]}}</mat-label>
-            <input matInput type="text" formControlName="email" placeholder="ochedowski.bartosz@gmail.com" />
+            <input matInput type="text" formControlName="email" placeholder="Example kowalski@gmail.com" />
             <mat-error *ngIf="email && email.invalid && (email.dirty || email.touched)">
                 <div *ngIf="email.errors && email.errors.required">Email name is required</div>
-                <div *ngIf="email.errors && email.errors.email">Maby you forgot the "@"?</div>
+                <div *ngIf="email.errors && email.errors.email">Email should start with a letter in the middle with "@"
+                    and "." and end with a letter</div>
             </mat-error>
         </mat-form-field>
         <mat-form-field class="gender" appearance="fill" class="example-full-width" [class.green-input]="hasError"
@@ -50,21 +51,21 @@
         </mat-form-field>
         <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
             <mat-label>{{fieldsNames[4]}}</mat-label>
-            <input matInput type="text" formControlName="street" placeholder="Miodowa" />
+            <input matInput type="text" formControlName="street" placeholder="Example street Miodowa" />
             <mat-error *ngIf="street && street.invalid && (street.dirty || street.touched)">
                 <div *ngIf="street.errors && street.errors.required">Street is required</div>
             </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
             <mat-label>{{fieldsNames[5]}}</mat-label>
-            <input matInput type="text" formControlName="town" placeholder="Rzeszów" />
+            <input matInput type="text" formControlName="town" placeholder="Example town Rzeszów" />
             <mat-error *ngIf="town && town.invalid && (town.dirty || town.touched)">
                 <div *ngIf="town.errors && town.errors.required">Town is required</div>
             </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
             <mat-label>{{fieldsNames[6]}}</mat-label>
-            <input matInput type="text" formControlName="country" placeholder="Poland" />
+            <input matInput type="text" formControlName="country" placeholder="Example country Poland" />
             <mat-error *ngIf="country && country.invalid && (country.dirty || country.touched)">
                 <div *ngIf="country.errors && country.errors.required">Country is required</div>
             </mat-error>
