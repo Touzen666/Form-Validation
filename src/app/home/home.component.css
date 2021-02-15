@@ -1,59 +1,15 @@
 .profileContainer{
 text-align: center;
+width: 100%;
 }
 .img{
-    width: 400px;
+  width: 20%;
     border-radius: 50%;
-    border: 5px solid black;
+    border: 5px solid black;  
+    margin-left: auto;
+    margin-right: auto;
 }
 .text{
     font-size: 20px;
 }
 
-@media (max-width: 414px) {
-    .img{
-        width: 220px;
-    }
-  }
-@media (min-width: 414px) {
-    .profileContainer{
-        margin-left: 3vw;
-    margin-right: 3vw;
-    }
-  }
-  @media (min-width: 500px) {
-    .profileContainer{
-        margin-left: 12vw;
-    margin-right: 12vw;
-    }
-  }
-  @media (min-width: 650px) {
-    .profileContainer{
-        margin-left: 19vw;
-    margin-right: 19vw;
-    }
-  }
-  @media (min-width: 800px) {
-    .profileContainer{
-        margin-left: 24vw;
-    margin-right: 24vw;
-    }
-  }
-  @media (min-width: 950px) {
-    .profileContainer{
-        margin-left: 30vw;
-    margin-right: 30vw;
-    }
-  }
-  @media (min-width: 1400px) {
-    .profileContainer{
-        margin-left: 34vw;
-    margin-right: 34vw;
-    }
-  }
-  @media (min-width: 1600px) {
-    .profileContainer{
-        margin-left: 37vw;
-    margin-right: 37vw;
-    }
-  }
