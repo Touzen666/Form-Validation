@@ -22,12 +22,12 @@ export class RegistrationFormComponent implements OnInit {
   registerForm = this.fb.group({
     firstName: ['', Validators.compose([
       Validators.required,
-      Validators.pattern('[A-ĄĆĘŁŃÓŚŹŻ]{4,}'),
+      Validators.pattern('[A-ĄąĆćĘęŁłŃńÓóŚśŹźŻż]{4,}'),
       Validators.minLength(3)
     ])],//from myself I added validator with letters
     lastName: ['', Validators.compose([
       Validators.required,
-      Validators.pattern('[A-ĄĆĘŁŃÓŚŹŻ]{4,}'),
+      Validators.pattern('[A-ĄąĆćĘęŁłŃńÓóŚśŹźŻż]{4,}'),
       Validators.minLength(3)
     ])],
     email: ['', Validators.compose([
