@@ -11,19 +11,23 @@ import { RegisterService } from '../services/register.service';
 export class RegistrationFormComponent implements OnInit {
   public title = 'Register Form';
   public user: any;
+  public fieldsNames = ["First Name", "Last Name", "Email", "Enter your gender", "Street", "Town", "Country", "Additional data"]
+  public hasError!: boolean;
 
   constructor(public fb: FormBuilder, private registerService: RegisterService) { }
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
 
   registerForm = this.fb.group({
     firstName: ['', Validators.compose([
       Validators.required,
-      Validators.pattern('[a-zA-Z ]*'),
+      Validators.pattern('[A-ĄĆĘŁŃÓŚŹŻ]{4,}'),
       Validators.minLength(3)
     ])],//from myself I added validator with letters
     lastName: ['', Validators.compose([
       Validators.required,
-      Validators.pattern('[a-zA-Z ]*'),
+      Validators.pattern('[A-ĄĆĘŁŃÓŚŹŻ]{4,}'),
       Validators.minLength(3)
     ])],
     email: ['', Validators.compose([
@@ -54,8 +58,16 @@ export class RegistrationFormComponent implements OnInit {
       console.log(this.registerForm.value);
       //this.mappingData(); //Mapping data that as you asked
       this.registerService.createUser(this.registerForm.value); //Save data in to the service
+      this.validationSuccess();
+      console.log(this.hasError)
     } else {
       alert('Popraw formularz')//Simple error on submit of course if by some miracle it occurs ;)
+    }
+  }
+
+  validationSuccess() {
+    if (this.registerForm.valid) {
+      this.hasError = true
     }
   }
 

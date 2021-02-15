@@ -5,40 +5,36 @@
 
     <mat-card class="registerFormCard">
         <h2 class="title">{{title}}</h2>
-        <mat-form-field class="example-full-width">
-            <mat-label>First Name</mat-label>
-            <input matInput type="text" formControlName="firstName" placeholder="Bartosz" />
+        <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
+            <mat-label>{{fieldsNames[0]}}</mat-label>
+            <input matInput type="text" formControlName="firstName" placeholder="Enter Your name" />
             <mat-error *ngIf="firstName && firstName.invalid && (firstName.dirty || firstName.touched)">
                 <div *ngIf="firstName.errors && firstName.errors.required">First name is required</div>
                 <div *ngIf="firstName.errors && firstName.errors.pattern">Allowed only letters</div>
                 <div *ngIf="firstName.errors && firstName.errors.minLength">Required more then 3 letters</div>
             </mat-error>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Last Name</mat-label>
-            <input matInput type="text" formControlName="lastName" placeholder="Ochędowski" />
-            <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                    <div *ngIf="firstName.errors.required">Last name is required</div>
-                    <div *ngIf="firstName.errors.pattern">Allowed only letters</div>
-                    <div *ngIf="firstName.errors.minLength">Required more then 3 letters</div>
-                </mat-error>
-                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
-                </mat-succes>
-                -->
+        <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
+            <mat-label>{{fieldsNames[1]}}</mat-label>
+            <input matInput type="text" formControlName="lastName" placeholder="Enter your last name" />
+            <mat-error *ngIf="lastName && lastName.invalid && (lastName.dirty || lastName.touched)">
+                <div *ngIf="lastName.errors && lastName.errors.required">Last name is required</div>
+                <div *ngIf="lastName.errors && lastName.errors.pattern">Allowed only letters</div>
+                <div *ngIf="lastName.errors && lastName.errors.minLength">Required more then 3 letters</div>
+            </mat-error>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
+        <mat-form-field class="example-full-width emailField" [class.green-input]="hasError"
+            [class.gray-input]="hasError">
+            <mat-label>{{fieldsNames[2]}}</mat-label>
             <input matInput type="text" formControlName="email" placeholder="ochedowski.bartosz@gmail.com" />
-            <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                    <div *ngIf="firstName.errors.required">Email name is required</div>
-                    <div *ngIf="firstName.errors.email">Maby you forgot the "@"</div>
-                </mat-error> 
-                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
-                </mat-succes>
-                -->
+            <mat-error *ngIf="email && email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors && email.errors.required">Email name is required</div>
+                <div *ngIf="email.errors && email.errors.email">Maby you forgot the "@"</div>
+            </mat-error>
         </mat-form-field>
-        <mat-form-field class="gender" appearance="fill" class="example-full-width">
-            <mat-label>Enter your gender</mat-label>
+        <mat-form-field class="gender" appearance="fill" class="example-full-width" [class.green-input]="hasError"
+            [class.gray-input]="hasError">
+            <mat-label>{{fieldsNames[3]}}</mat-label>
             <mat-select formControlName="gender">
                 <mat-option>--</mat-option>
                 <mat-option value="male">
@@ -48,51 +44,35 @@
                     female
                 </mat-option>
             </mat-select>
-            <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                    <div *ngIf="firstName.errors.required">Gender name is required</div>
-                </mat-error>
-                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
-                </mat-succes>
-                -->
+            <mat-error *ngIf="gender && gender.invalid && (gender.dirty || gender.touched)">
+                <div *ngIf="gender.errors && gender.errors.required">Gender is required</div>
+            </mat-error>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Street</mat-label>
+        <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
+            <mat-label>{{fieldsNames[4]}}</mat-label>
             <input matInput type="text" formControlName="street" placeholder="Miodowa" />
-            <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                    <div *ngIf="firstName.errors.required">Gender name is required</div>
-                </mat-error> 
-                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
-                </mat-succes>
-                -->
+            <mat-error *ngIf="street && street.invalid && (street.dirty || street.touched)">
+                <div *ngIf="street.errors && street.errors.required">Street is required</div>
+            </mat-error>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Town</mat-label>
+        <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
+            <mat-label>{{fieldsNames[5]}}</mat-label>
             <input matInput type="text" formControlName="town" placeholder="Rzeszów" />
-            <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                    <div *ngIf="firstName.errors.required">Gender name is required</div>
-                </mat-error>
-                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
-                </mat-succes>
-                -->
+            <mat-error *ngIf="town && town.invalid && (town.dirty || town.touched)">
+                <div *ngIf="town.errors && town.errors.required">Town is required</div>
+            </mat-error>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Country</mat-label>
+        <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
+            <mat-label>{{fieldsNames[6]}}</mat-label>
             <input matInput type="text" formControlName="country" placeholder="Poland" />
-            <!-- <mat-error *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
-                    <div *ngIf="firstName.errors.required">Gender name is required</div>
-                </mat-error> 
-                <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
-                </mat-succes>
-                -->
+            <mat-error *ngIf="country && country.invalid && (country.dirty || country.touched)">
+                <div *ngIf="country.errors && country.errors.required">Country is required</div>
+            </mat-error>
         </mat-form-field>
-
-
-        <mat-form-field class="textAreaField">
-            <mat-label>Additional data</mat-label>
+        <mat-form-field class="textAreaField" [class.green-input]="hasError" [class.gray-input]="hasError">
+            <mat-label>{{fieldsNames[7]}}</mat-label>
             <textarea matInput formControlName="textArea" class="textArea"
                 placeholder="I am new here hello."></textarea>
-            <!-- <mat-succes *ngIf="firstName.valid && (firstName.dirty || firstName.touched)">
-            </mat-succes> -->
         </mat-form-field>
         <button mat-raised-button color="primary" class="submit-bottom-right" [disabled]="!registerForm.valid"
             type="submit">

@@ -1,10 +1,10 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav #drawer mode="over" class="drawer">
     <h3 class="title">Menu</h3>
-    <mat-label>
+    <mat-label class="inputs-position">
       <button mat-button class="label-button home" color="primary" routerLink="home">Home</button>
       <br>
-      <button mat-button class="label-button register" color="primary" routerLink="register">Register</button>
+      <button mat-button class="label-button register" color="primary" routerLink="register">Enter user data</button>
     </mat-label>
 
   </mat-sidenav>
@@ -12,7 +12,9 @@
   <mat-sidenav-content>
 
     <mat-toolbar color="primary" style=" left: 0 ; right: 0;top: 0; width: 100%;  position: fixed; z-index: 100;">
-      <button mat-raised-button (click)="drawer.toggle()">Menu</button>
+      <button mat-button (click)="drawer.toggle()">
+        <img style="height: 30px;" src="../assets/menu.png" alt="menu">
+      </button>
     </mat-toolbar>
     <div class="container" style="margin-top: 70px;">
       <router-outlet></router-outlet>
