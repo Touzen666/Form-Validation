@@ -3,9 +3,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
 ## Development server
-All needed dependencies are already install.
+All needed dependencies are already installed.
 Run `ng serve --o` for a dev server. 
-the server will be automaticlly open in your browser.
+The server will be automaticlly opened in your browser.
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
