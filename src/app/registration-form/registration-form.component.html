@@ -29,7 +29,7 @@
             <input matInput type="text" formControlName="email" placeholder="ochedowski.bartosz@gmail.com" />
             <mat-error *ngIf="email && email.invalid && (email.dirty || email.touched)">
                 <div *ngIf="email.errors && email.errors.required">Email name is required</div>
-                <div *ngIf="email.errors && email.errors.email">Maby you forgot the "@"</div>
+                <div *ngIf="email.errors && email.errors.email">Maby you forgot the "@"?</div>
             </mat-error>
         </mat-form-field>
         <mat-form-field class="gender" appearance="fill" class="example-full-width" [class.green-input]="hasError"
