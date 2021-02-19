@@ -9,7 +9,6 @@ export interface FormUser {
     country: string;
     textArea: string;
 }
-
 export interface User {
     Name: {
         FirstName: string;

@@ -1,8 +1,5 @@
 <form class="registerContainer" [formGroup]="registerForm" (ngSubmit)="submited()">
-
-
     <!-- {{ registerForm.value | json }} I was used it to see what get my validators -->
-
     <mat-card class="registerFormCard">
         <h2 class="title">{{title}}</h2>
         <mat-form-field class="example-full-width" [class.green-input]="hasError" [class.gray-input]="hasError">
@@ -77,9 +74,5 @@
             type="submit">
             Register
         </button>
-
     </mat-card>
-
-
-
 </form>

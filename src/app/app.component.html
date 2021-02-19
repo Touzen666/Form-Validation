@@ -6,11 +6,8 @@
       <br>
       <button mat-button class="label-button register" color="primary" routerLink="register">Enter user data</button>
     </mat-label>
-
   </mat-sidenav>
-
   <mat-sidenav-content>
-
     <mat-toolbar color="primary" style=" left: 0 ; right: 0;top: 0; width: 100%;  position: fixed; z-index: 100;">
       <button mat-button (click)="drawer.toggle()">
         <img style="height: 30px;" src="../assets/menu.png" alt="menu">
@@ -19,9 +16,5 @@
     <div class="container" style="margin-top: 70px;">
       <router-outlet></router-outlet>
     </div>
-
-
-
-
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from '../services/register.service';
-
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -13,18 +11,13 @@ export class RegistrationFormComponent implements OnInit {
   public user: any;
   public fieldsNames = ["First Name", "Last Name", "Email", "Enter your gender", "Street", "Town", "Country", "Additional data"]
   public hasError!: boolean;
-
   constructor(public fb: FormBuilder, private registerService: RegisterService) { }
-  ngOnInit() {
-
-  }
-
+  ngOnInit() { }
   registerForm = this.fb.group({
     firstName: ['', Validators.compose([
       Validators.required,
       Validators.minLength(3),
       Validators.pattern('[A-ĄąĆćĘęŁłŃńÓóŚśŹźŻż]*'),
-
     ])],//from myself I added validator with letters
     lastName: ['', Validators.compose([
       Validators.required,
@@ -41,7 +34,6 @@ export class RegistrationFormComponent implements OnInit {
     country: ['', Validators.required],
     textArea: [''],
   })
-
   get firstName() { return this.registerForm.get('firstName') }
   get lastName() { return this.registerForm.get('lastName') }
   get email() { return this.registerForm.get('email') }
@@ -50,14 +42,9 @@ export class RegistrationFormComponent implements OnInit {
   get town() { return this.registerForm.get('town') }
   get country() { return this.registerForm.get('country') }
   get textArea() { return this.registerForm.get('textArea') }
-
   submited() {
     console.log("Is it RegisterationFormComponent valid? ==>" + this.registerForm.valid);
-
     if (this.registerForm.valid && this.registerForm.dirty) {
-      console.log("This what creat the RegisterationFormComponent:");
-      console.log(this.registerForm.value);
-      //this.mappingData(); //Mapping data that as you asked
       this.registerService.createUser(this.registerForm.value); //Save data in to the service
       this.validationSuccess();
       console.log(this.hasError)
@@ -65,11 +52,9 @@ export class RegistrationFormComponent implements OnInit {
       alert('Popraw formularz')//Simple error on submit of course if by some miracle it occurs ;)
     }
   }
-
   validationSuccess() {
     if (this.registerForm.valid) {
       this.hasError = true
     }
   }
-
 }

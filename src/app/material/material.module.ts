@@ -19,7 +19,6 @@ const MaterialComponents = [
     MatSidenavModule,
     MatSelectModule,
 ];
-
 @NgModule({
     imports: [MaterialComponents],
     exports: [MaterialComponents],
