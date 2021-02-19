@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { User, FormUser } from '../models/User';
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
-  private user!: User;
+  public user = new BehaviorSubject<User | null>(null);
   constructor() { }
   createUser(userData: FormUser) {
     const user = this.mapUser(userData);
-    console.log("This is what get the service:");
     console.log(user);
-    this.user = user; // Remember user for the session
+    this.user.next(user); // Remember user for the session
     // Example of Http request
     // return this.http.put(`/v1/accounts/register`, user);
   }

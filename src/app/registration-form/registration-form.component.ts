@@ -10,7 +10,6 @@ export class RegistrationFormComponent implements OnInit {
   public title = 'Register Form';
   public user: any;
   public fieldsNames = ["First Name", "Last Name", "Email", "Enter your gender", "Street", "Town", "Country", "Additional data"]
-  public hasError!: boolean;
   constructor(public fb: FormBuilder, private registerService: RegisterService) { }
   ngOnInit() { }
   registerForm = this.fb.group({
@@ -43,18 +42,10 @@ export class RegistrationFormComponent implements OnInit {
   get country() { return this.registerForm.get('country') }
   get textArea() { return this.registerForm.get('textArea') }
   submited() {
-    console.log("Is it RegisterationFormComponent valid? ==>" + this.registerForm.valid);
     if (this.registerForm.valid && this.registerForm.dirty) {
       this.registerService.createUser(this.registerForm.value); //Save data in to the service
-      this.validationSuccess();
-      console.log(this.hasError)
     } else {
       alert('Popraw formularz')//Simple error on submit of course if by some miracle it occurs ;)
-    }
-  }
-  validationSuccess() {
-    if (this.registerForm.valid) {
-      this.hasError = true
     }
   }
 }
