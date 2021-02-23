@@ -8,7 +8,6 @@ import { RegisterService } from '../services/register.service';
 })
 export class RegistrationFormComponent implements OnInit {
   public title = 'Register Form';
-  public user: any;
   public fieldsNames = ["First Name", "Last Name", "Email", "Enter your gender", "Street", "Town", "Country", "Additional data"]
   constructor(public fb: FormBuilder, private registerService: RegisterService) { }
   ngOnInit() { }
